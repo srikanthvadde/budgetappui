@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+
+# Build directories
+android/build/
+android/app/build/
+ios/Pods/
+ios/build/
+ios/DerivedData/
+
+# Xcode project files
+ios/*.xcworkspace/
+ios/*.xcuserdata/
+
+# Log files
+*.log
+
+# Environment files
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Expo specific (if using Expo)
+.expo/
+.expo-shared/
+
+# Watchman (for macOS users)
+.watchmanconfig
+
+# React Native packager cache
+npm-debug.log
+yarn-error.log
+
+# Temporary files
+*.tmp
+*.swp
+
+
+# Custom files
+*.keystore
+*.jks

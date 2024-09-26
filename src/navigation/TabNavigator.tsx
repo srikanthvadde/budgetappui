@@ -7,6 +7,7 @@ import ReportsScreen from '../screens/ReportsScreen';
 import DashboardScreen from '../screens/DashboardScreen';
 import { useColorScheme } from '../hooks/useColorScheme';
 import { Colors } from '../constants/Colors';
+import TransactionsStackNavigator from './TransactionStackNavigator';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -16,17 +17,39 @@ const TabNavigator: React.FC = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: { backgroundColor: Colors[colorScheme ?? 'light'].background },
-        tabBarIndicatorStyle: { backgroundColor: Colors[colorScheme ?? 'light'].tint },
-        tabBarLabelStyle: { fontWeight: 'bold', fontSize: 14 },
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        tabBarInactiveTintColor: Colors[colorScheme ?? 'light'].inactiveTint,
+        tabBarStyle: {
+          backgroundColor: '#006D5B',
+          overflow: "scroll", // Ensures scrolling is enabled
+        },
+        tabBarIndicatorStyle: {
+          backgroundColor: Colors[colorScheme ?? "light"].tint,
+        },
+        tabBarLabelStyle: { fontWeight: "bold", fontSize: 14 },
+        tabBarActiveTintColor:'#fbfcfc',
+        tabBarInactiveTintColor: '#fbfcfc',
+        tabBarScrollEnabled: true, // Enable horizontal scrolling
       }}
     >
-      <Tab.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Dashboard' }} />
-      <Tab.Screen name="Account" component={AccountScreen} options={{ title: 'Account' }} />
-      <Tab.Screen name="Transactions" component={TransactionsScreen} options={{ title: 'Transactions' }} />
-      <Tab.Screen name="Reports" component={ReportsScreen} options={{ title: 'Reports' }} />
+       <Tab.Screen
+        name="Dashboard"
+        component={DashboardScreen}
+        options={{ title: "Dashboard" }}
+      />
+      <Tab.Screen
+        name="Account"
+        component={AccountScreen}
+        options={{ title: "Account" }}
+      />
+      <Tab.Screen
+        name="Transactions"
+        component={TransactionsStackNavigator}
+        options={{ title: "Transactions" }}
+      />
+      <Tab.Screen
+        name="Reports"
+        component={ReportsScreen}
+        options={{ title: "Reports" }}
+      />
     </Tab.Navigator>
   );
 };
